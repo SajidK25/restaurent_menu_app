@@ -1,0 +1,25 @@
+<html>
+<body>
+
+<h1>Restaurant List</h1>
+<hr>
+<a href="{{  url_for('newRestaurant') }}">Add Restaurant</a>
+<hr>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Menu</th>
+    <th>Action</th>
+  </tr>
+  {% for restaurant in restaurants %}
+  <tr>
+    <td>{{restaurant.name}}</td>
+    <td><a href="{ url_for('showMenu',restaurant_id=restaurant.id)}}">View Menu</a></td>
+    <td><a href="{{ url_for('editRestaurant',restaurant_id=restaurant.id)}}">Edit</a> | <a href="{{ url_for('deleteRestaurant',restaurant_id=restaurant.id) }}">Delete</a></td>
+  </tr>
+{% endfor %}
+</table>
+
+</body>
+
+</html>
