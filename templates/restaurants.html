@@ -14,7 +14,7 @@
   {% for restaurant in restaurants %}
   <tr>
     <td>{{restaurant.name}}</td>
-    <td><a href="{ url_for('showMenu',restaurant_id=restaurant.id)}}">View Menu</a></td>
+    <td><a href="{{ url_for('showMenu',restaurant_id=restaurant.id)}}">View Menu</a></td>
     <td><a href="{{ url_for('editRestaurant',restaurant_id=restaurant.id)}}">Edit</a> | <a href="{{ url_for('deleteRestaurant',restaurant_id=restaurant.id) }}">Delete</a></td>
   </tr>
 {% endfor %}
